@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="CSS/style.css"> 
+		<title>Restaurant</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	</head>
+	<body>
+		<section>
+			<h3>Galeria d'imatges</h3>
+			<div class="gallery">
+				<div class="image-container">
+					<img src="IMAGES/plat1.jpg" alt="Imatge plat de verdures">
+				</div>
+				<div class="image-container">
+					<img src="IMAGES/plat2.jpg" alt="Imatge plat despaguettis">
+				</div>
+				<div class="image-container">
+					<img src="IMAGES/plat3_resolucioBaixa.jpg" alt="Imatge plat de salmó amb verdures">
+				</div>
+			</div>
+
+			<h3>Imatge Responsiva: (per fer)</h3>
+			<!-- Una imatge per la versió escriptori.
+			Una imatge més petita que el de 1024px  i comprimida per a la versió de 640px .
+			Una imatge més petita que l’original i comprimida per a la versió de 1024px.  -->
+			<!-- <div class="foto">
+				<picture>
+					<source media="(min-width:1024px)" srcset="IMAGES/img_responsive2_low.jpg">
+					<img src="IMAGES/img_responsive2.jpg" alt="Imatge d'un restaurant" style="width:auto;">
+				</picture> 
+			</div> -->
+
+			
+			
+			<h3>Animacions</h3>
+			<div class="css_div">
+				<p>capa</p>
+			</div>
+
+			<h3>Vídeo:</h3>
+			<div class="container-video">
+				<video id="video1">
+					<source src="/VIDEOS/video.mp4" type="video/mp4">
+				</video>
+			</div>
+			<!-- Icones -->
+			<span id="control-play-video" class="material-icons" style="color: black; font-size: 33px;" onclick="play_video()">play_arrow</span>
+			<span id="control-pause-video" class="material-icons" style="color: black; font-size: 33px;" onclick="pause_video()">pause</span>
+
+			<!-- Fer que el vídeo es pari automàticament amb l’scroll del navegador quan s’arribi a l’apartat del video(0,5 punt). -->
+			<h3>Vídeo automaticament però es pausa amb l'scroll:</h3>
+			<div class="container-video">
+				<video id="video2" autoplay muted>
+					<source src="/VIDEOS/video.mp4" type="video/mp4">
+				</video>
+			</div>
+
+
+			<h3>Vídeo automaticament:</h3>
+			<div class="container-video">
+				<video id="video3" autoplay muted>
+					<source src="/VIDEOS/video.mp4" type="video/mp4">
+				</video>
+			</div>
+
+			
+		</section>
+
+		<!-- Funcions -->
+		<script>
+			console.log("Init del projecte:");
+
+			//Funció per reproduïr el vídeo
+			function play_video(){
+				console.log("El video s'està reprodïnt.");
+				var video = document.getElementById("video1");
+				var control = document.getElementById("control-play-video");
+				
+				//Funció que reproduirà el video
+				video.play();
+			}
+			//Funció per pausar el vídeo
+			function pause_video(){
+				console.log("El video s'ha pausat.");
+				var video = document.getElementById("video1");
+				var control = document.getElementById("control-pause-video");
+		
+				//Funció que pararà el video
+				video.pause();
+			}
+
+
+			//Funció del scroll
+			window.onscroll = function myFunction(){
+				if(document.body.scrollTop> 1000 || document.documentElement.scrollTop > 1000){
+					pause_video2();					
+					
+				} else{
+					play_video2();
+					
+				}
+			}
+			
+			//Funció per reproduïr el vídeo
+			function play_video2(){
+				console.log("El video s'està reprodïnt per l'scroll.");
+				var video = document.getElementById("video2");
+				var control = document.getElementById("control-play-video");
+				
+				//Funció que reproduirà el video
+				video.play();
+			}
+			//Funció per pausar el vídeo
+			function pause_video2(){
+				console.log("El video s'ha pausat per l'scroll.");
+				var video = document.getElementById("video2");
+				var control = document.getElementById("control-pause-video");
+		
+				//Funció que pararà el video
+				video.pause();
+			}
+
+
+
+		</script>
+	</body>
+</html>
